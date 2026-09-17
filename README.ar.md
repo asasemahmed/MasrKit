@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="علم مصر بنسر صلاح الدين الذهبي" width="132">
+
 <img src="assets/masrkit-hero.svg" alt="MasrKit: ابنِ منتجات تحسّ إنها معمولة لمصر" width="100%">
 
 # 🇪🇬 MasrKit 🇪🇬
