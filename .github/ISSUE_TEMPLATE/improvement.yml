@@ -1,0 +1,26 @@
+name: Improvement request
+description: Improve an existing skill, example, evaluation, or maintainer workflow.
+title: "[Improvement]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the current agent or contributor failure, not only a preferred solution.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Suggested scope and tradeoffs
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Example or evidence

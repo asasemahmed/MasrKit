@@ -1,0 +1,42 @@
+name: New skill proposal
+description: Propose a distinct, reusable skill for MasrKit.
+title: "[Skill]: "
+labels: [enhancement, skill-proposal]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed skill ID
+      placeholder: lowercase-hyphenated-name
+    validations:
+      required: true
+  - type: textarea
+    id: requests
+    attributes:
+      label: Real requests this skill should handle
+      description: Provide at least two representative prompts or tasks.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Scope and boundary
+      description: What decisions belong here, and why do existing skills not cover them?
+    validations:
+      required: true
+  - type: textarea
+    id: knowledge
+    attributes:
+      label: Non-obvious knowledge and evidence
+      description: Include current official sources for changing facts.
+    validations:
+      required: true
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Principles
+      options:
+        - label: This proposal avoids stereotypes and unverifiable claims.
+          required: true
+        - label: This proposal can remain vendor-neutral.
+          required: true

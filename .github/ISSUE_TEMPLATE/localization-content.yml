@@ -1,0 +1,30 @@
+name: Localization or content issue
+description: Report unnatural, inaccurate, inconsistent, or exclusionary guidance or copy.
+title: "[Content]: "
+labels: [content, localization]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: File and section
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong?
+      description: Include audience, domain, and register. Explain why the current wording fails in context.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested correction
+      description: Provide alternatives if the best wording depends on context.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or reviewer context
+      description: Do not include personal data. Cite official sources for changing factual claims.

@@ -1,0 +1,9 @@
+{
+  "examples": [
+    {"file": "saas-landing-page.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux"]},
+    {"file": "scholarship-platform.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux", "egyptian-backend"]},
+    {"file": "ecommerce-product.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux", "egyptian-backend"]},
+    {"file": "arabic-dashboard.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy"]},
+    {"file": "website-audit.md", "skills": ["egyptian-web-audit", "arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux"]}
+  ]
+}

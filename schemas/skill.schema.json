@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://masrkit.dev/schemas/skill.schema.json",
+  "title": "MasrKit skill frontmatter",
+  "type": "object",
+  "required": ["name", "description", "metadata"],
+  "properties": {
+    "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "description": {"type": "string", "minLength": 30},
+    "metadata": {
+      "type": "object",
+      "required": ["version", "category", "locale", "tags"],
+      "properties": {
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "category": {"enum": ["arabic-foundation", "egypt-localization"]},
+        "locale": {"type": "string"},
+        "tags": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
