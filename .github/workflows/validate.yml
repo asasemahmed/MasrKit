@@ -17,3 +17,12 @@ jobs:
           python-version: "3.12"
       - name: Validate repository
         run: python scripts/validate.py
+      - name: Verify Python installer
+        run: python scripts/install.py --all --target codex --dry-run
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Verify npm package and installer
+        run: |
+          node scripts/install.mjs --all --target codex --dry-run
+          npm pack --dry-run

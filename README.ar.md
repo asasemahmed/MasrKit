@@ -1,6 +1,12 @@
-# MasrKit 🇪🇬
+<div align="center">
+
+<img src="assets/masrkit-hero.svg" alt="MasrKit: ابنِ منتجات تحسّ إنها معمولة لمصر" width="100%">
+
+# 🇪🇬 MasrKit 🇪🇬
 
 **ابنِ منتجات تحسّ إنها معمولة لمصر.**
+
+</div>
 
 MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمية لوكلاء البرمجة بالذكاء الاصطناعي، علشان يساعدهم يبنوا منتجات مناسبة للمستخدمين في مصر فعلًا—مش مجرد واجهات إنجليزية مترجمة للعربي.
 
@@ -18,6 +24,7 @@ MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمي�
 - [`egyptian-product-ux`](skills/egyptian-product-ux/SKILL.md): تصميم تدفقات استخدام تراعي السوق والمستخدمين في مصر من غير تعميمات.
 - [`egyptian-web-audit`](skills/egyptian-web-audit/SKILL.md): مراجعة المواقع والمنتجات بأدلة ومقترحات قابلة للتنفيذ.
 - [`egyptian-backend`](skills/egyptian-backend/SKILL.md): نمذجة البيانات، والفلوس، والوقت، والإشعارات، والأمان، والتكاملات.
+- [`humanizer`](skills/humanizer/SKILL.md): تحسين النصوص الجامدة وإزالة الشرطات الطويلة والعلامات الزخرفية مع الحفاظ على المعنى والنبرة والمعلومات.
 
 المحتوى الأساسي مكتوب بصيغة Markdown عادية ومش مربوط بشركة أو أداة واحدة. كل مهارة لها ملف `SKILL.md` ومراجع إضافية تُقرأ وقت الحاجة.
 
@@ -27,6 +34,13 @@ MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمي�
 
 ```bash
 python scripts/install.py --all --target codex --dry-run
+```
+
+أو استخدم Node.js 18 أو أحدث من داخل نسخة المشروع:
+
+```bash
+npx --yes . --all --target codex --dry-run
+npx --yes . --all --target codex
 ```
 
 ثبّت كل المهارات أو مهارة واحدة:

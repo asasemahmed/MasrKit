@@ -1,0 +1,53 @@
+{
+  "name": "masrkit",
+  "version": "0.2.0",
+  "description": "Open-source AI agent skills for building products that feel truly Egyptian.",
+  "type": "module",
+  "bin": {
+    "masrkit": "scripts/install.mjs"
+  },
+  "files": [
+    "assets",
+    "docs",
+    "examples",
+    "schemas",
+    "skills",
+    "scripts/install.mjs",
+    "scripts/install.py",
+    "scripts/install.ps1",
+    "scripts/install.sh",
+    "scripts/validate.py",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "README.ar.md",
+    "SECURITY.md",
+    "pyproject.toml",
+    "LICENSE"
+  ],
+  "scripts": {
+    "validate": "python scripts/validate.py",
+    "install:dry-run": "node scripts/install.mjs --all --target codex --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai-agents",
+    "agent-skills",
+    "arabic",
+    "egypt",
+    "rtl",
+    "localization"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asasemahmed/MasrKit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/asasemahmed/MasrKit/issues"
+  },
+  "homepage": "https://github.com/asasemahmed/MasrKit#readme"
+}

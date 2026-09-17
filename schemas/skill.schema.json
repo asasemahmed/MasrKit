@@ -12,7 +12,7 @@
       "required": ["version", "category", "locale", "tags"],
       "properties": {
         "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
-        "category": {"enum": ["arabic-foundation", "egypt-localization"]},
+        "category": {"enum": ["arabic-foundation", "egypt-localization", "content-quality"]},
         "locale": {"type": "string"},
         "tags": {"type": "array", "minItems": 2, "items": {"type": "string"}, "uniqueItems": true}
       },

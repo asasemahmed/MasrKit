@@ -4,6 +4,12 @@ All notable changes to MasrKit are documented here. The project follows [Semanti
 
 ## [Unreleased]
 
+### Added
+
+- `humanizer` skill for natural rewriting, punctuation cleanup, and meaning preservation.
+- Dependency-free npm and npx installer alongside the existing Python workflow.
+- Egyptian flag hero artwork and expanded README installation guidance.
+
 ## [0.1.0] - 2026-09-17
 
 ### Added

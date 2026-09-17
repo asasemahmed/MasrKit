@@ -1,6 +1,8 @@
 <div align="center">
 
-# MasrKit 🇪🇬
+<img src="assets/masrkit-hero.svg" alt="MasrKit: Build products that feel Egyptian" width="100%">
+
+# 🇪🇬 MasrKit 🇪🇬
 
 ### Build products that feel Egyptian.
 
@@ -8,8 +10,9 @@ Open-source AI agent skills for building digital products that feel truly Egypti
 
 <p>
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0B7A53?style=flat-square">
-  <img alt="Skills: 6" src="https://img.shields.io/badge/skills-6-C62828?style=flat-square">
+  <img alt="Skills: 7" src="https://img.shields.io/badge/skills-7-C62828?style=flat-square">
   <img alt="Python: 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Node.js: 18+" src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=nodedotjs&logoColor=white">
   <img alt="Arabic and RTL ready" src="https://img.shields.io/badge/Arabic%20%26%20RTL-ready-111827?style=flat-square">
 </p>
 
@@ -60,33 +63,57 @@ MasrKit turns those failure modes into reusable instructions, decision framework
 | **[`egyptian-web-audit`](skills/egyptian-web-audit/SKILL.md)** | Run evidence-based quick, full, content, RTL, or UX audits with actionable findings instead of arbitrary scores. |
 | **[`egyptian-backend`](skills/egyptian-backend/SKILL.md)** | Model Arabic text, search, phones, exact money, time, notifications, OTP, uploads, security, and provider adapters safely. |
 
+### Content quality
+
+| Skill | What it helps an agent do |
+|---|---|
+| **[`humanizer`](skills/humanizer/SKILL.md)** | Rewrite mechanical text into natural prose, remove long dashes and decorative marks when requested, and preserve meaning, facts, technical tokens, and voice. |
+
 Every skill works independently. Load only the combination your task needs.
 
 ## Quick start
 
-### 1. Preview the installation
+### Option A: npm and npx
 
-The installer requires Python 3.9 or newer and never overwrites an existing skill directory.
+Use the package directly from a cloned repository with Node.js 18 or newer:
+
+```bash
+npx --yes . --all --target codex --dry-run
+npx --yes . --all --target codex
+```
+
+Install the command globally from the local checkout:
+
+```bash
+npm install --global .
+masrkit --skill humanizer --target codex
+```
+
+The package is prepared for npm distribution. Until an official package release is published, use the local checkout commands above rather than assuming that a registry package exists.
+
+### Option B: Python
+
+The Python installer requires Python 3.9 or newer:
 
 ```bash
 python scripts/install.py --all --target codex --dry-run
-```
-
-### 2. Install MasrKit
-
-Install all six skills:
-
-```bash
 python scripts/install.py --all --target codex
 ```
 
-Or install only what you need:
+### Installer behavior
+
+Both installers use the same canonical `skills/` directory and never overwrite an existing skill directory.
+
+### Install selected skills
+
+Install only what you need:
 
 ```bash
 python scripts/install.py \
   --skill arabic-ui \
   --skill arabic-rtl \
   --skill egyptian-copy \
+  --skill humanizer \
   --target codex
 ```
 
@@ -116,8 +143,8 @@ python scripts/install.py --all --dest /path/to/agent/skills
 <summary><strong>macOS / Linux</strong></summary>
 
 ```bash
-./scripts/install.sh --all --target codex --dry-run
-./scripts/install.sh --all --target codex
+sh ./scripts/install.sh --all --target codex --dry-run
+sh ./scripts/install.sh --all --target codex
 ```
 
 </details>
@@ -129,7 +156,7 @@ Copy a complete folder from `skills/` into the skills directory documented by yo
 
 </details>
 
-### 3. Give your agent a clear brief
+### Give your agent a clear brief
 
 ```text
 Use MasrKit's arabic-ui, arabic-rtl, egyptian-copy,
@@ -154,6 +181,7 @@ Constraints:
 | A full-stack Egyptian product feature | The four above + `egyptian-backend` |
 | A localization or UX review | `egyptian-web-audit` + the relevant specialist skills |
 | Product copy only | `egyptian-copy` |
+| Humanizing or punctuation cleanup | `humanizer`; add `egyptian-copy` for Egyptian product voice |
 | A local backend integration | `egyptian-backend` + the applicable UX/copy skill |
 
 ```text
@@ -177,6 +205,7 @@ Ready-to-adapt prompts are included for common product work:
 - [Egyptian ecommerce product](examples/ecommerce-product.md)
 - [Arabic operations dashboard](examples/arabic-dashboard.md)
 - [Existing website audit](examples/website-audit.md)
+- [Humanize Egyptian product copy](examples/humanize-product-copy.md)
 
 ## What a MasrKit skill looks like
 
@@ -197,6 +226,8 @@ masrkit/
 ├── skills/       # Canonical skill entrypoints and focused references
 ├── examples/     # Ready-to-use composition prompts
 ├── scripts/      # Safe installer and repository validator
+├── package.json  # npm and npx package entrypoint
+├── assets/       # Repository branding assets
 ├── schemas/      # Machine-readable metadata contract
 ├── docs/         # Architecture and authoring guidance
 └── .github/      # CI, issue forms, and pull request workflow

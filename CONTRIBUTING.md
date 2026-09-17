@@ -20,11 +20,12 @@ Thank you for helping products work better for people in Egypt. By participating
 
 ## Development
 
-Python 3.9+ is sufficient; there are no third-party runtime dependencies.
+Use Python 3.9+ or Node.js 18+. There are no third-party runtime dependencies.
 
 ```bash
 python scripts/validate.py
 python scripts/install.py --all --dest ./dist/test-skills --dry-run
+npx --yes . --all --dest ./dist/test-skills --dry-run
 ```
 
 When changing the installer, verify overwrite refusal, dry-run behavior, single-skill installation, and all-skill installation in a temporary destination. For substantive skill changes, exercise a realistic request and summarize the observed improvement in the pull request.
