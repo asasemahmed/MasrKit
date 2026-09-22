@@ -2,7 +2,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="Flag of Egypt with the gold Eagle of Saladin" width="132">
 
-<img src="assets/masrkit-hero.svg" alt="MasrKit: Build products that feel Egyptian" width="100%">
+<img src="assets/masrkit-hero-premium.svg" alt="MasrKit: Build products that feel Egyptian" width="100%">
 
 # 🇪🇬 MasrKit 🇪🇬
 
