@@ -5,6 +5,7 @@
     {"file": "ecommerce-product.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux", "egyptian-backend"]},
     {"file": "arabic-dashboard.md", "skills": ["arabic-ui", "arabic-rtl", "egyptian-copy"]},
     {"file": "website-audit.md", "skills": ["egyptian-web-audit", "arabic-ui", "arabic-rtl", "egyptian-copy", "egyptian-product-ux"]},
-    {"file": "humanize-product-copy.md", "skills": ["humanizer", "egyptian-copy"]}
+    {"file": "humanize-product-copy.md", "skills": ["humanizer", "egyptian-copy"]},
+    {"file": "session-report.md", "skills": ["egyptian-session-report", "egyptian-copy", "arabic-rtl"]}
   ]
 }

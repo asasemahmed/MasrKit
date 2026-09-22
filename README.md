@@ -8,11 +8,11 @@
 
 ### Build products that feel Egyptian.
 
-Open-source AI agent skills for building digital products that feel truly Egyptian—not merely translated into Arabic.
+Open-source AI agent skills for building digital products that feel truly Egyptian, not merely translated into Arabic.
 
 <p>
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0B7A53?style=flat-square">
-  <img alt="Skills: 7" src="https://img.shields.io/badge/skills-7-C62828?style=flat-square">
+  <img alt="Skills: 8" src="https://img.shields.io/badge/skills-8-C62828?style=flat-square">
   <img alt="Python: 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white">
   <img alt="Node.js: 18+" src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=nodedotjs&logoColor=white">
   <img alt="Arabic and RTL ready" src="https://img.shields.io/badge/Arabic%20%26%20RTL-ready-111827?style=flat-square">
@@ -24,7 +24,7 @@ Open-source AI agent skills for building digital products that feel truly Egypti
 
 ---
 
-> **The principle:** Build for the way people read, write, decide, pay, recover, and trust—not for an English screen with Arabic strings dropped into it.
+> **The principle:** Build for the way people read, write, decide, pay, recover, and trust, not for an English screen with Arabic strings dropped into it.
 
 MasrKit is a vendor-neutral skill library for AI coding agents. It gives agents practical product, content, frontend, RTL, audit, and backend guidance for Egyptian-facing software while keeping the source readable as ordinary Markdown.
 
@@ -64,6 +64,7 @@ MasrKit turns those failure modes into reusable instructions, decision framework
 | **[`egyptian-product-ux`](skills/egyptian-product-ux/SKILL.md)** | Design mobile-resilient flows for phone/OTP, addresses, EGP, payments, trust, support, uploads, and interrupted sessions. |
 | **[`egyptian-web-audit`](skills/egyptian-web-audit/SKILL.md)** | Run evidence-based quick, full, content, RTL, or UX audits with actionable findings instead of arbitrary scores. |
 | **[`egyptian-backend`](skills/egyptian-backend/SKILL.md)** | Model Arabic text, search, phones, exact money, time, notifications, OTP, uploads, security, and provider adapters safely. |
+| **[`egyptian-session-report`](skills/egyptian-session-report/SKILL.md)** | Summarize completed session work in natural Egyptian Arabic and deliver it as a clean RTL HTML report with Cairo font and a light/dark toggle. |
 
 ### Content quality
 
@@ -297,6 +298,6 @@ MasrKit is open source under the [MIT License](LICENSE).
 
 <div align="center">
 
-**MasrKit 🇪🇬 — Build products that feel Egyptian.**
+**MasrKit 🇪🇬 · Build products that feel Egyptian.**
 
 </div>

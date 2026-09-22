@@ -2,7 +2,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="علم مصر بنسر صلاح الدين الذهبي" width="132">
 
-<img src="assets/masrkit-hero.svg" alt="MasrKit: ابنِ منتجات تحسّ إنها معمولة لمصر" width="100%">
+<img src="assets/masrkit-hero-premium.svg" alt="MasrKit: ابنِ منتجات تحسّ إنها معمولة لمصر" width="100%">
 
 # 🇪🇬 MasrKit 🇪🇬
 
@@ -27,6 +27,7 @@ MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمي�
 - [`egyptian-web-audit`](skills/egyptian-web-audit/SKILL.md): مراجعة المواقع والمنتجات بأدلة ومقترحات قابلة للتنفيذ.
 - [`egyptian-backend`](skills/egyptian-backend/SKILL.md): نمذجة البيانات، والفلوس، والوقت، والإشعارات، والأمان، والتكاملات.
 - [`humanizer`](skills/humanizer/SKILL.md): تحسين النصوص الجامدة وإزالة الشرطات الطويلة والعلامات الزخرفية مع الحفاظ على المعنى والنبرة والمعلومات.
+- [`egyptian-session-report`](skills/egyptian-session-report/SKILL.md): تلخيص شغل الجلسة في تقرير HTML بالعربي المصري، بخط Cairo ووضع نهاري وليلي.
 
 المحتوى الأساسي مكتوب بصيغة Markdown عادية ومش مربوط بشركة أو أداة واحدة. كل مهارة لها ملف `SKILL.md` ومراجع إضافية تُقرأ وقت الحاجة.
 

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تقرير جلسة العمل · MasrKit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script>
+  // Apply the saved or system theme before first paint to avoid a flash.
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('report-theme'); } catch (e) {}
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<style>
+  :root {
+    --bg: #FAF8F3;
+    --surface: #FFFFFF;
+    --ink: #1C1A15;
+    --muted: #6B6455;
+    --line: #E7E0D0;
+    --accent: #A67C12;
+    --accent-soft: #F4EACF;
+    --green: #0B7A53;
+    --green-soft: #E2F3EA;
+    --red: #C62828;
+    --red-soft: #FBE7E7;
+    --shadow: 0 1px 3px rgba(28, 26, 21, .07);
+  }
+  [data-theme="dark"] {
+    --bg: #12141A;
+    --surface: #1A1D26;
+    --ink: #EDEAE2;
+    --muted: #A39E93;
+    --line: #2B2F3B;
+    --accent: #E3B44C;
+    --accent-soft: #2C2617;
+    --green: #4CC38A;
+    --green-soft: #14261D;
+    --red: #F17C7C;
+    --red-soft: #2E1B1B;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .45);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    transition: background .25s ease, color .25s ease;
+  }
+  .container { max-width: 840px; margin-inline: auto; padding: 56px 20px 72px; }
+
+  .theme-toggle {
+    position: fixed; top: 16px; inset-inline-end: 16px;
+    font-family: inherit; font-size: 14px; font-weight: 600;
+    color: var(--ink); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 8px 18px; cursor: pointer; box-shadow: var(--shadow);
+    transition: background .25s ease, color .25s ease;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+  .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .report-header { margin-bottom: 28px; }
+  .eyebrow { color: var(--accent); font-size: 14px; font-weight: 700; letter-spacing: .5px; }
+  .report-header h1 { font-size: 34px; font-weight: 800; line-height: 1.5; margin-top: 4px; }
+  .meta { color: var(--muted); font-size: 15px; margin-top: 6px; }
+  .meta span[dir="ltr"] { unicode-bidi: isolate; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 24px 28px;
+    box-shadow: var(--shadow); margin-top: 20px;
+  }
+  .card h2 {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 20px; font-weight: 700; margin-bottom: 12px;
+  }
+  .card h2::before {
+    content: ""; width: 4px; height: 20px;
+    border-radius: 2px; background: var(--accent); flex-shrink: 0;
+  }
+  .card p { color: var(--ink); }
+  .card p + p { margin-top: 8px; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px; margin-top: 20px;
+  }
+  .stat {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 16px; text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .stat-number { display: block; font-size: 28px; font-weight: 800; line-height: 1.4; }
+  .stat-label { display: block; color: var(--muted); font-size: 14px; }
+  .stat-green { color: var(--green); }
+  .stat-red { color: var(--red); }
+
+  .tasks { list-style: none; }
+  .tasks li { position: relative; padding-inline-start: 30px; padding-block: 6px; }
+  .tasks li::before {
+    content: "✓"; position: absolute; inset-inline-start: 2px;
+    color: var(--green); font-weight: 800;
+  }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  th { color: var(--muted); font-size: 13px; font-weight: 600; text-align: start; padding-bottom: 8px; }
+  td { padding: 12px 0; border-top: 1px solid var(--line); font-size: 15px; vertical-align: middle; }
+  .file {
+    font-family: ui-monospace, Consolas, 'Courier New', monospace;
+    font-size: 13px; text-align: left; unicode-bidi: isolate;
+  }
+  .badge {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    border-radius: 999px; padding: 2px 14px; white-space: nowrap;
+  }
+  .badge-new { color: var(--green); background: var(--green-soft); }
+  .badge-edit { color: var(--accent); background: var(--accent-soft); }
+  .badge-delete { color: var(--red); background: var(--red-soft); }
+  .diff { font-family: ui-monospace, Consolas, monospace; font-size: 13px; white-space: nowrap; }
+  .diff .plus { color: var(--green); }
+  .diff .minus { color: var(--red); }
+
+  footer {
+    margin-top: 40px; text-align: center;
+    color: var(--muted); font-size: 14px;
+  }
+  footer .divider { width: 48px; height: 3px; border-radius: 2px; background: var(--accent); margin: 0 auto 14px; }
+
+  @media (max-width: 560px) {
+    .container { padding: 48px 14px 56px; }
+    .report-header h1 { font-size: 26px; }
+    .card { padding: 20px; }
+    td, th { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="تبديل بين الوضع النهاري والليلي">الوضع الليلي</button>
+
+<main class="container">
+
+  <header class="report-header">
+    <p class="eyebrow">تقرير جلسة عمل</p>
+    <h1>مشروع MasrKit · تحديث الهوية البصرية</h1>
+    <p class="meta">22 سبتمبر 2026 · الفرع <span dir="ltr">main</span> · الحالة: مكتملة</p>
+  </header>
+
+  <section class="card">
+    <h2>الملخص</h2>
+    <p>الجلسة دي ركّزت على تحديث شكل المشروع. صمّمنا بانر رئيسي جديد بخلفية فاتحة وروح مصرية، وحدّثنا ملف <span dir="ltr">README.md</span> علشان يستخدمه، وعملنا مهارة جديدة بتولّد تقارير زي دي بشكل تلقائي.</p>
+    <p>كل التغييرات اتأكدنا منها بالمتصفح، والتحقق بتاع المشروع عدّى من غير مشاكل.</p>
+  </section>
+
+  <section class="stats" aria-label="أرقام الجلسة">
+    <div class="stat"><span class="stat-number">4</span><span class="stat-label">مهام مكتملة</span></div>
+    <div class="stat"><span class="stat-number">3</span><span class="stat-label">ملفات اتغيرت</span></div>
+    <div class="stat"><span class="stat-number stat-green" dir="ltr">+120</span><span class="stat-label">سطر إضافة</span></div>
+    <div class="stat"><span class="stat-number stat-red" dir="ltr">-15</span><span class="stat-label">سطر حذف</span></div>
+  </section>
+
+  <section class="card">
+    <h2>المهام المكتملة</h2>
+    <ul class="tasks">
+      <li>تصميم بانر رئيسي جديد بخلفية فاتحة وشعار مصرى مميز.</li>
+      <li>تحديث ملف <span dir="ltr">README.md</span> علشان يعرض البانر الجديد.</li>
+      <li>إضافة مهارة <span dir="ltr">egyptian-session-report</span> لتوليد تقارير الجلسات.</li>
+      <li>التأكد من إن تحقق المشروع بيعدّي من غير أخطاء.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>الملفات اللي اتغيرت</h2>
+    <table>
+      <thead>
+        <tr><th>الملف</th><th>نوع التغيير</th><th>الحجم</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="file" dir="ltr">assets/masrkit-hero-premium.svg</td>
+          <td><span class="badge badge-new">جديد</span></td>
+          <td class="diff" dir="ltr"><span class="plus">+99</span></td>
+        </tr>
+        <tr>
+          <td class="file" dir="ltr">skills/egyptian-session-report/SKILL.md</td>
+          <td><span class="badge badge-new">جديد</span></td>
+          <td class="diff" dir="ltr"><span class="plus">+84</span></td>
+        </tr>
+        <tr>
+          <td class="file" dir="ltr">README.md</td>
+          <td><span class="badge badge-edit">تعديل</span></td>
+          <td class="diff" dir="ltr"><span class="plus">+4</span> <span class="minus">-4</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>اللي لسه جاي</h2>
+    <p>مفيش حاجة متعطلة. الخطوة الجاية المقترحة: مراجعة البانر على GitHub والتأكد إن شكله مناسب على الموبايل.</p>
+  </section>
+
+  <footer>
+    <div class="divider"></div>
+    <p>صنع فى مصر · اتولد بواسطة MasrKit</p>
+  </footer>
+
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    function refreshLabel() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = dark ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('report-theme', next); } catch (e) {}
+      refreshLabel();
+    });
+    refreshLabel();
+  })();
+</script>
+</body>
+</html>

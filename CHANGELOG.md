@@ -7,6 +7,8 @@ All notable changes to MasrKit are documented here. The project follows [Semanti
 ### Added
 
 - `humanizer` skill for natural rewriting, punctuation cleanup, and meaning preservation.
+- `egyptian-session-report` skill for Egyptian Arabic session summaries delivered as self-contained RTL HTML reports.
+- Premium light-mode hero artwork with a cartouche emblem, used by both README files.
 - Dependency-free npm and npx installer alongside the existing Python workflow.
 - Egyptian flag hero artwork and expanded README installation guidance.
 
