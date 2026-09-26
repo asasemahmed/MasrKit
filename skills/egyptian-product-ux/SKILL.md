@@ -26,7 +26,7 @@ Use it to design or review acquisition, onboarding, registration, checkout, book
 
 ## Workflow
 
-1. Define audience segments by task, context, device, language comfort, and constraints—not stereotypes.
+1. Define audience segments by task, context, device, language comfort, and constraints, not stereotypes.
 2. Create an evidence table: known product facts, research findings, assumptions to test, and external facts requiring current verification.
 3. Map the critical path on a narrow screen and intermittent connection. Identify interruption/resume points.
 4. Decide language, phone, address, currency, payment, support, and identity behavior explicitly.

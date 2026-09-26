@@ -12,7 +12,7 @@ metadata:
 
 ## Purpose
 
-Write copy that sounds chosen for its audience and task, not translated sentence by sentence. Egyptian copy is a register decision—not a license for exaggerated slang, forced humor, phonetic spellings, or indiscriminate English.
+Write copy that sounds chosen for its audience and task, not translated sentence by sentence. Egyptian copy is a register decision, not a license for exaggerated slang, forced humor, phonetic spellings, or indiscriminate English.
 
 ## Use this skill when
 
@@ -21,7 +21,7 @@ Use it for Egyptian product UI, onboarding, forms, marketing, transactions, supp
 ## Workflow
 
 1. Identify audience, domain, relationship, risk, channel, and desired action.
-2. Choose a register and record it in one sentence: for example, “professional Egyptian Arabic, warm, direct, and restrained.”
+2. Choose a register and a form of address, and record both in one sentence: for example, “professional Egyptian Arabic, warm, direct, and restrained; generic masculine second person, no gender inference.”
 3. Create a terminology list for repeated actions, entities, and statuses before writing screens.
 4. Write from user intent and consequence. Do not preserve English word order.
 5. Make buttons specific, validation recoverable, and transactional content explicit about status and next steps.
@@ -53,6 +53,19 @@ Use for B2B administration, contracts, invoices, account permissions, security, 
 ### Mixed Arabic and English
 
 Retain English when the audience recognizes a product, protocol, plan, or technical term more reliably in English. Introduce it clearly and use it consistently. Do not transliterate merely to make the screen look local. Prefer an Arabic explanation plus the recognized English term when comprehension benefits.
+
+## Address the user deliberately
+
+Egyptian Arabic second-person forms are gendered: `اكتب` / `اكتبي`, `تحب` / `تحبي`, `جرّب` / `جرّبي`. Decide the policy once per product and apply it everywhere, including notifications and support templates.
+
+1. **Generic masculine (default).** Egyptian interfaces conventionally use the masculine second person as the generic form, and most users read it as neutral in short commands and buttons. Use it when there is no stored preference and no brand decision. The examples in this skill follow this default.
+2. **User-chosen form.** If the product lets users choose how to be addressed, use that choice in personalized messages (greetings, notifications, support replies). Keep shared UI such as buttons and labels generic.
+3. **Neutral constructions.** Where they read naturally, avoid the choice altogether: verbal nouns on buttons (`حفظ التغييرات`, `إرسال الطلب`), first-person plural for system actions (`مقدرناش نبعت الطلب`), or statements about the object (`الملف اتحذف`). Do not force these where they sound stiff.
+
+- Never infer gender from a name, photo, or national ID.
+- Do not mix forms inside one flow.
+- Use feminine forms throughout only when the audience is known to be women, for example a product built for mothers, and research supports it.
+- Avoid slash forms like `اكتب/ي` in product UI. They are acceptable in formal documents and printed forms.
 
 ## Content patterns
 
@@ -116,12 +129,12 @@ These examples show adaptation, not universal approved strings.
 |---|---|---|---|
 | Form submit | `تقديم النموذج` | `إرسال الطلب` | `ابعت طلبك` when the brand permits dialect |
 | Required phone | `حقل الهاتف مطلوب` | `أدخل رقم الهاتف` | `اكتب رقم الموبايل` |
-| Network error | `حدث خطأ ما` | `تعذّر إرسال الطلب. حاول مرة أخرى.` | `مقدرناش نبعت الطلب. بياناتك محفوظة—جرّب تاني.` |
+| Network error | `حدث خطأ ما` | `تعذّر إرسال الطلب. حاول مرة أخرى.` | `مقدرناش نبعت الطلب. بياناتك محفوظة، جرّب تاني.` |
 | Empty orders | `لا توجد أوامر` | `لا توجد طلبات حتى الآن` | `لسه مفيش طلبات. أول طلب هيظهر هنا.` |
 | Pending payment | `تم الدفع بنجاح` | `عملية الدفع قيد المراجعة` | `الدفع لسه بيتأكد. هنحدّث حالة الطلب أول ما النتيجة توصل.` |
 | Delete | `هل أنت متأكد؟` | `هل تريد حذف الملف؟` | `تحب تحذف الملف؟ مش هتقدر ترجّعه بعد الحذف.` |
 
-“Best” changes with audience and risk. In a bank or official portal, the neutral/formal option may be best.
+“Best” changes with audience and risk. In a bank or official portal, the neutral/formal option may be best. The “best” column uses the generic masculine default described in [Address the user deliberately](#address-the-user-deliberately).
 
 ## Terminology and consistency
 
@@ -130,7 +143,7 @@ Maintain a small termbase with: concept ID, preferred Arabic, allowed English, r
 - One concept should have one preferred name within a flow.
 - Distinguish `حساب` (account), `طلب` (request/order/application depending on domain), and `عملية` (transaction/operation) by context.
 - Preserve official names and identifiers. Do not translate brands or legal entity names unless an official form exists.
-- Choose `هاتف` versus `موبايل`, `إرسال` versus `ابعت`, and similar pairs based on the declared register—not personal taste.
+- Choose `هاتف` versus `موبايل`, `إرسال` versus `ابعت`, and similar pairs based on the declared register, not personal taste.
 
 ## Editing heuristics
 
@@ -144,7 +157,8 @@ Maintain a small termbase with: concept ID, preferred Arabic, allowed English, r
 
 ## Quality checklist
 
-- [ ] Audience, domain, risk, channel, and register are explicit.
+- [ ] Audience, domain, risk, channel, register, and form of address are explicit.
+- [ ] Gendered forms follow one policy across the flow; gender is never inferred.
 - [ ] Copy is written for intent rather than translated line by line.
 - [ ] CTAs describe results and reflect the actual commitment.
 - [ ] Errors name the problem, preserve work, and offer recovery.

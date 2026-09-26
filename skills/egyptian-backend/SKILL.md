@@ -173,7 +173,7 @@ Verify framework/version documentation before choosing middleware, runtime APIs,
 - [ ] UTF-8 and original Arabic values survive every storage and transport boundary.
 - [ ] Search normalization is separate, versioned, and field-appropriate.
 - [ ] Phones have normalized/display concerns separated; verification state is explicit.
-- [ ] Money uses integer minor units or exact decimal with explicit currency—never float.
+- [ ] Money uses integer minor units or exact decimal with explicit currency, never float.
 - [ ] Instants are UTC; calendar dates and future local schedules are modeled distinctly.
 - [ ] Locale negotiation, fallback, error codes, and template versions are deterministic.
 - [ ] Notifications and local integrations use capability-based adapters and idempotent delivery.

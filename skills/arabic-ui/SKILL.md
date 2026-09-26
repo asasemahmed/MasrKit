@@ -62,7 +62,7 @@ Read [references/typography.md](references/typography.md) when selecting fonts o
 ### Buttons and actions
 
 - Use verbs that describe the result: `كمّل الطلب`, `احفظ التغييرات`, or an audience-appropriate neutral equivalent.
-- Keep one clear primary action per decision area. Place action groups according to reading flow, platform convention, and risk—not a blanket mirroring rule.
+- Keep one clear primary action per decision area. Place action groups according to reading flow, platform convention, and risk, not a blanket mirroring rule.
 - Preserve label width under loading. Pair a spinner with an accessible status, prevent duplicate submission, and state what is happening.
 - For destructive actions, name the object and offer a safe confirmation or undo proportional to the harm.
 

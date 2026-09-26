@@ -123,12 +123,12 @@ Include: issue, severity, affected location, evidence, why it matters, recommend
 
 ## Reporting structure
 
-1. **Scope and constraints** — mode, pages, locales, viewports, test environment, unavailable areas.
-2. **Executive summary** — three to five systemic observations, not a marketing grade.
-3. **Findings** — sorted by severity and then journey; use the standard format.
-4. **Cross-cutting patterns** — shared typography, direction, copy, data, or component causes.
-5. **Prioritized next actions** — immediate containment, near-term system fix, and research/verification.
-6. **Unknowns** — facts needing analytics, user research, operations, security, legal, or provider confirmation.
+1. **Scope and constraints**: mode, pages, locales, viewports, test environment, unavailable areas.
+2. **Executive summary**: three to five systemic observations, not a marketing grade.
+3. **Findings**: sorted by severity and then journey; use the standard format.
+4. **Cross-cutting patterns**: shared typography, direction, copy, data, or component causes.
+5. **Prioritized next actions**: immediate containment, near-term system fix, and research/verification.
+6. **Unknowns**: facts needing analytics, user research, operations, security, legal, or provider confirmation.
 
 Read [references/checklists.md](references/checklists.md) for mode-specific coverage.
 
