@@ -2,7 +2,7 @@
 name: egyptian-copy
 description: Write natural Egyptian Arabic product copy (عامية مصرية or MSA) for apps and websites. Use when writing or translating UI strings, buttons, error messages, onboarding, notifications, marketing pages, WhatsApp or support replies for Egyptian users, choosing a register between MSA and Egyptian dialect, or deciding how to address users by gender and formality. Not for general text cleanup (use humanizer).
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   category: egypt-localization
   locale: ar-EG
   tags: [egypt, copywriting, localization, content-design]

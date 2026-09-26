@@ -2,7 +2,7 @@
 name: arabic-rtl
 description: Implement and test right-to-left (RTL) and bidirectional web layouts. Use when adding dir=rtl or lang=ar, converting physical CSS to logical properties, using Tailwind rtl/ltr variants, deciding which icons to flip, fixing phone numbers, emails, URLs, or order IDs that scramble inside Arabic text, or debugging RTL in flexbox, tables, charts, portals, and React or Next.js. Not for visual design choices (use arabic-ui) or wording (use egyptian-copy).
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   category: arabic-foundation
   locale: ar
   tags: [rtl, bidi, css, web]

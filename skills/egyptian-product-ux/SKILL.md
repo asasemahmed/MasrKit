@@ -2,7 +2,7 @@
 name: egyptian-product-ux
 description: Design product flows for Egyptian users. Use when designing signup and login with Egyptian phone numbers and OTP, Egyptian address forms (governorate, district, landmark), EGP pricing and checkout with cash on delivery, cards, Meeza, mobile wallets, InstaPay, or Fawry-style reference payments, WhatsApp handoff, document uploads, language switching, or flows that must survive weak mobile connections. Includes dated Egypt reference facts.
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   category: egypt-localization
   locale: ar-EG
   tags: [egypt, product-ux, mobile, localization]

@@ -73,6 +73,8 @@ MasrKit turns those failure modes into reusable instructions, decision framework
 |---|---|
 | **[`humanizer`](skills/humanizer/SKILL.md)** | Rewrite mechanical text into natural prose, remove long dashes and decorative marks when requested, and preserve meaning, facts, technical tokens, and voice. |
 
+`humanizer` is general-purpose and works on any English or Arabic text. It ships with MasrKit because Arabic product copy is often translated or machine-written and needs this pass; pair it with `egyptian-copy` when the voice must be Egyptian.
+
 Every skill works independently. Load only the combination your task needs.
 
 ## Quick start

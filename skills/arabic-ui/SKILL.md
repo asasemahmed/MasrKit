@@ -2,7 +2,7 @@
 name: arabic-ui
 description: Design and review Arabic-first interfaces for any Arabic market. Use when choosing Arabic fonts, type scale, and line height, laying out Arabic or bilingual pages, forms, navigation, cards, dashboards, and dialogs, or specifying loading, empty, error, and success states with accessibility. Not for RTL implementation bugs (use arabic-rtl) or Egypt-specific flows (use egyptian-product-ux).
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   category: arabic-foundation
   locale: ar
   tags: [arabic, ui, typography, accessibility]
