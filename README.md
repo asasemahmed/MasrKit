@@ -16,9 +16,10 @@ Open-source AI agent skills for building digital products that feel truly Egypti
   <img alt="Python: 3.9+" src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white">
   <img alt="Node.js: 18+" src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=nodedotjs&logoColor=white">
   <img alt="Arabic and RTL ready" src="https://img.shields.io/badge/Arabic%20%26%20RTL-ready-111827?style=flat-square">
+  <a href="https://www.skills.sh/asasemahmed/masrkit"><img alt="skills.sh installs" src="https://skills.sh/b/asasemahmed/masrkit"></a>
 </p>
 
-[Quick start](#quick-start) · [Explore the skills](#the-skills) · [See examples](#examples) · [Read in Arabic](README.ar.md)
+[Quick start](#quick-start) · [Explore the skills](#the-skills) · [See examples](#examples) · [View on skills.sh](https://www.skills.sh/asasemahmed/masrkit) · [Read in Arabic](README.ar.md)
 
 </div>
 
@@ -76,7 +77,23 @@ Every skill works independently. Load only the combination your task needs.
 
 ## Quick start
 
-### Option A: npm and npx
+### Recommended: the skills CLI
+
+MasrKit is listed on [skills.sh](https://www.skills.sh/asasemahmed/masrkit), the open agent skills directory. Install every skill for your agent with one command (Node.js 18 or newer):
+
+```bash
+npx skills add asasemahmed/masrkit
+```
+
+The CLI asks which skills and which agents to install for. To pick skills without prompts:
+
+```bash
+npx skills add asasemahmed/masrkit --skill arabic-rtl --skill egyptian-copy -y
+```
+
+Use `-g` for a user-level install, `npx skills list` to see what is installed, and `npx skills update` to pull the latest versions.
+
+### Option A: npm and npx from a local checkout
 
 Use the package directly from a cloned repository with Node.js 18 or newer:
 

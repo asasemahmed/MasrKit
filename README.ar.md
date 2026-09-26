@@ -10,9 +10,11 @@
 
 </div>
 
-MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمية لوكلاء البرمجة بالذكاء الاصطناعي، علشان يساعدهم يبنوا منتجات مناسبة للمستخدمين في مصر فعلًا—مش مجرد واجهات إنجليزية مترجمة للعربي.
+MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمية لوكلاء البرمجة بالذكاء الاصطناعي، علشان يساعدهم يبنوا منتجات مناسبة للمستخدمين في مصر فعلًا، مش مجرد واجهات إنجليزية مترجمة للعربي.
 
-[English README](README.md)
+[![skills.sh](https://skills.sh/b/asasemahmed/masrkit)](https://www.skills.sh/asasemahmed/masrkit)
+
+[English README](README.md) · [صفحة المشروع على skills.sh](https://www.skills.sh/asasemahmed/masrkit)
 
 ## المشروع بيحل إيه؟
 
@@ -32,6 +34,20 @@ MasrKit مشروع مفتوح المصدر يوفّر مهارات تعليمي�
 المحتوى الأساسي مكتوب بصيغة Markdown عادية ومش مربوط بشركة أو أداة واحدة. كل مهارة لها ملف `SKILL.md` ومراجع إضافية تُقرأ وقت الحاجة.
 
 ## التثبيت
+
+MasrKit موجود على [skills.sh](https://www.skills.sh/asasemahmed/masrkit)، دليل مهارات الوكلاء المفتوح. أسهل طريقة إنك تثبّت المهارات بأمر واحد (محتاج Node.js 18 أو أحدث):
+
+```bash
+npx skills add asasemahmed/masrkit
+```
+
+الأداة هتسألك تثبّت أنهي مهارات ولأنهي وكيل. ولو عايز تختار مهارات معيّنة من غير أسئلة:
+
+```bash
+npx skills add asasemahmed/masrkit --skill arabic-rtl --skill egyptian-copy -y
+```
+
+### التثبيت من نسخة محلية
 
 عاين اللي هيتم من غير ما تنسخ ملفات:
 

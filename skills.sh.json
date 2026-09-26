@@ -1,0 +1,27 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Arabic foundations",
+      "description": "Arabic typography, UI, RTL layout, and bidirectional text for any Arabic market.",
+      "skills": ["arabic-ui", "arabic-rtl"]
+    },
+    {
+      "title": "Egypt-specific",
+      "description": "Egyptian Arabic copy, product flows, audits, backends, and session reports.",
+      "skills": [
+        "egyptian-copy",
+        "egyptian-product-ux",
+        "egyptian-web-audit",
+        "egyptian-backend",
+        "egyptian-session-report"
+      ]
+    },
+    {
+      "title": "Content quality",
+      "description": "Natural rewriting and punctuation cleanup for Arabic and English text.",
+      "skills": ["humanizer"]
+    }
+  ]
+}
