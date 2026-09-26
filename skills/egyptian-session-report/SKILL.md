@@ -28,7 +28,7 @@ Do not use it for commit messages, developer changelogs, English release notes, 
 2. Group the work into a small number of meaningful tasks. Merge trivial edits into the task they belong to instead of listing every file touch.
 3. Write the summary in professional Egyptian Arabic: what was done, why it matters, and what is left, in that order.
 4. Fill the HTML template from [references/report-template.html](references/report-template.html) with the real content and save it as a new file.
-5. Open the result in a browser and verify RTL rendering, both themes, and mobile width before delivering.
+5. If a browser or preview tool is available, open the result and check RTL rendering, both themes, and a narrow mobile width. If not, re-read the HTML for `dir="rtl"`, the theme toggle script, and leftover sample content, and say the page was not visually checked.
 
 ## Gather the changes
 
@@ -61,12 +61,14 @@ Do not use it for commit messages, developer changelogs, English release notes, 
 - Translating an English summary word for word into stiff formal Arabic.
 - Letting Latin file names flip the reading direction of an Arabic sentence.
 - Shipping only one theme, or a toggle that forgets the choice on reload.
+- Dropping the report into the repository root where it gets committed with the work it describes.
 - Adding CSS or JS frameworks, icon libraries, or trackers. The report must stay a single portable file.
 - Decorative clutter: heavy gradients, animations, emoji walls, or marketing language about the work.
 
 ## Output behavior
 
-- Save the report as `session-report.html` in the project root unless the user names a different path.
+- Save the report where the user asks. Otherwise save it outside the repository, in the agent's scratch or temp directory, as `session-report-YYYY-MM-DD.html`, so the report never ends up in a commit by accident.
+- If the user wants it inside the project, suggest a `reports/` folder and check whether it should be added to `.gitignore`. Never commit the report unless asked.
 - Reply with the file path and one sentence in Egyptian Arabic describing what the report covers. Do not paste the whole HTML into chat unless asked.
 - Offer to adjust the register, more formal or more casual, or to change the default theme.
 
