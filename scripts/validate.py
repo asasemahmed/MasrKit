@@ -122,6 +122,30 @@ def validate_examples(valid_names: set[str]) -> list[str]:
     return errors
 
 
+def validate_evals(valid_names: set[str]) -> list[str]:
+    errors = []
+    path = ROOT / "evals" / "cases.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"evals/cases.json: {exc}"]
+    ids: set[str] = set()
+    covered: set[str] = set()
+    for case in data.get("cases", []):
+        case_id = case.get("id", "")
+        if not case_id or case_id in ids:
+            errors.append(f"evals/cases.json: missing or duplicate id {case_id!r}")
+        ids.add(case_id)
+        if case.get("skill") not in valid_names:
+            errors.append(f"evals/cases.json: {case_id} uses unknown skill {case.get('skill')!r}")
+        covered.add(case.get("skill"))
+        if not case.get("prompt") or not case.get("expect"):
+            errors.append(f"evals/cases.json: {case_id} needs a prompt and at least one expect line")
+    for name in sorted(valid_names - covered):
+        errors.append(f"evals/cases.json: no eval case for skill {name}")
+    return errors
+
+
 def run() -> list[str]:
     errors: list[str] = []
     names: set[str] = set()
@@ -131,6 +155,7 @@ def run() -> list[str]:
     for path in skill_files:
         errors.extend(validate_skill(path, names))
     errors.extend(validate_examples(names))
+    errors.extend(validate_evals(names))
     errors.extend(validate_links())
     return errors
 
@@ -144,7 +169,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("Validation passed: skill metadata, structure, examples, and links are valid.")
+    print("Validation passed: skill metadata, structure, examples, evals, and links are valid.")
     return 0
 
 

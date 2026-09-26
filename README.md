@@ -245,6 +245,7 @@ skills/arabic-rtl/
 masrkit/
 ├── skills/       # Canonical skill entrypoints and focused references
 ├── examples/     # Ready-to-use composition prompts
+├── evals/        # Prompts and expected behaviors for measuring each skill
 ├── scripts/      # Safe installer and repository validator
 ├── package.json  # npm and npx package entrypoint
 ├── assets/       # Repository branding assets
@@ -269,8 +270,11 @@ It checks:
 - unique skill identifiers;
 - required operational sections;
 - valid example-to-skill references;
+- eval cases in [`evals/`](evals/README.md), with at least one per skill;
 - unresolved internal Markdown links;
 - unfinished scaffold markers.
+
+To measure whether a skill actually changes agent output, run the prompts in [`evals/cases.json`](evals/cases.json) with and without the skill. See [evals/README.md](evals/README.md).
 
 The same command runs in GitHub Actions on pushes and pull requests.
 

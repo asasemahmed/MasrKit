@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "rtl-phone-in-sentence",
+      "skill": "arabic-rtl",
+      "prompt": "Write the HTML for an Arabic sentence that tells the user we sent a code to +20 10 1234 5678, and a phone input field for correcting it.",
+      "expect": [
+        "Wraps the phone number in <bdi> or an explicit dir=\"ltr\" element",
+        "Sets dir=\"ltr\" and type=\"tel\" on the input while the label stays RTL",
+        "Does not reverse the digits or use bidi override characters"
+      ]
+    },
+    {
+      "id": "rtl-tailwind-card",
+      "skill": "arabic-rtl",
+      "prompt": "Convert this Tailwind card to support Arabic: <div class=\"ml-4 pl-6 border-l-4 text-left\"><span class=\"absolute right-2\">New</span>...</div>",
+      "expect": [
+        "Uses logical utilities such as ms-, ps-, border-s, text-start, end-",
+        "Does not add flex-row-reverse on top of dir=\"rtl\"",
+        "Explains which offsets are logical versus physical"
+      ]
+    },
+    {
+      "id": "ui-arabic-type-scale",
+      "skill": "arabic-ui",
+      "prompt": "Pick fonts and a type scale for an Arabic-first SaaS dashboard.",
+      "expect": [
+        "Recommends a font with full Arabic support and real weights",
+        "Uses larger line height for Arabic than typical Latin defaults",
+        "Warns against letter-spacing on Arabic text"
+      ]
+    },
+    {
+      "id": "copy-network-error",
+      "skill": "egyptian-copy",
+      "prompt": "Write the Arabic error message for a failed order submission in an Egyptian food delivery app.",
+      "expect": [
+        "Uses natural professional Egyptian Arabic, not a literal translation",
+        "Says what failed, that the order details are kept, and how to retry",
+        "Uses one consistent form of address and no exaggerated slang"
+      ]
+    },
+    {
+      "id": "copy-address-policy",
+      "skill": "egyptian-copy",
+      "prompt": "Write onboarding copy in Egyptian Arabic for a fitness app. We don't know the user's gender.",
+      "expect": [
+        "States a form-of-address policy before writing",
+        "Does not infer gender or use slash forms like اكتب/ي in UI",
+        "Uses neutral constructions where they read naturally"
+      ]
+    },
+    {
+      "id": "ux-checkout-payments",
+      "skill": "egyptian-product-ux",
+      "prompt": "Design the payment step of a checkout for an Egyptian electronics store.",
+      "expect": [
+        "Considers cash on delivery, cards including Meeza, wallets, InstaPay, reference codes, and installments",
+        "Shows only methods the merchant account supports",
+        "Treats reference-code and cash-on-delivery orders as pending with clear instructions"
+      ]
+    },
+    {
+      "id": "ux-address-form",
+      "skill": "egyptian-product-ux",
+      "prompt": "Design a delivery address form for Egypt.",
+      "expect": [
+        "Includes governorate, district, building, floor, apartment, and landmark",
+        "Does not require a postal code or force a state/ZIP template",
+        "Includes a reachable phone number for the courier"
+      ]
+    },
+    {
+      "id": "audit-checkout-page",
+      "skill": "egyptian-web-audit",
+      "prompt": "Do a quick audit of an Egyptian ecommerce checkout page that shows 'تم الدفع بنجاح' right after redirecting to a Fawry reference code.",
+      "expect": [
+        "Flags the premature success message as a high-severity finding",
+        "Uses the finding format with evidence, fix, and confidence",
+        "Gives no numeric localization score"
+      ]
+    },
+    {
+      "id": "backend-money-time",
+      "skill": "egyptian-backend",
+      "prompt": "Design the orders table and a function that schedules a delivery reminder at 9am Cairo time.",
+      "expect": [
+        "Stores money as integer minor units with an EGP currency code",
+        "Uses the Africa/Cairo IANA zone, not a fixed +02:00 offset",
+        "Mentions the Friday and Saturday weekend or DST transitions"
+      ]
+    },
+    {
+      "id": "backend-phone-normalize",
+      "skill": "egyptian-backend",
+      "prompt": "Write a function that normalizes Egyptian phone numbers entered by users.",
+      "expect": [
+        "Converts Arabic-Indic digits to ASCII",
+        "Outputs E.164 such as +201012345678",
+        "Uses a maintained phone library instead of an operator-prefix regex"
+      ]
+    },
+    {
+      "id": "report-session",
+      "skill": "egyptian-session-report",
+      "prompt": "لخّص اللي اتعمل في الجلسة دي في تقرير.",
+      "expect": [
+        "Builds the summary from git evidence, not memory",
+        "Saves the HTML outside the repository unless told otherwise",
+        "Writes natural Egyptian Arabic with LTR-isolated file names"
+      ]
+    },
+    {
+      "id": "humanizer-dashes",
+      "skill": "humanizer",
+      "prompt": "Humanize this and remove the em dashes: Our platform — built for speed — delivers a seamless, robust experience.",
+      "expect": [
+        "Removes all em dashes and chooses punctuation by meaning",
+        "Replaces vague praise like seamless and robust with something specific or removes it",
+        "Adds no new facts"
+      ]
+    }
+  ]
+}

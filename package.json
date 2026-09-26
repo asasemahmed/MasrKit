@@ -9,6 +9,7 @@
   "files": [
     "assets",
     "docs",
+    "evals",
     "examples",
     "schemas",
     "skills",
