@@ -1,6 +1,6 @@
 # Egypt-oriented local data boundaries
 
-This reference defines product questions, not a permanent country database. Verify changing facts with current authoritative sources.
+This reference defines what to store and decide for each kind of local data. For the concrete Egyptian values (formats, zones, payment methods), see [egypt-facts.md](egypt-facts.md).
 
 ## Phone
 

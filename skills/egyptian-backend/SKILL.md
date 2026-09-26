@@ -20,7 +20,7 @@ Use it for APIs, schemas, authentication, search, notification delivery, money, 
 
 ## Workflow
 
-1. Identify locale-sensitive domain values and separate canonical storage, normalized lookup, and localized display.
+1. Identify locale-sensitive domain values and separate canonical storage, normalized lookup, and localized display. Use [references/egypt-data.md](references/egypt-data.md) for Egyptian phone, digit, ID, EGP, time-zone, search, and payment-state defaults.
 2. Model money, time, phone, address, and message state explicitly.
 3. Define locale negotiation and fallback at system boundaries.
 4. Put email, SMS, WhatsApp, payment, and other changing providers behind capability-based adapters.

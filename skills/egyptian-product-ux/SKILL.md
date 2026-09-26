@@ -18,7 +18,7 @@ Turn local context into testable product decisions without treating Egyptians as
 2. **Arabic-wide:** RTL, mixed scripts, Arabic typography.
 3. **Egypt-specific:** phone/address patterns, EGP display, locally validated channels and expectations.
 
-Label assumptions and verify changing legal, regulatory, provider, and market facts with current official sources before implementation.
+Start from the dated defaults in [references/egypt-facts.md](references/egypt-facts.md): phone formats, address structure, EGP display, digits, time zone and weekend, common payment methods, and messaging channels. Design with those directly. Only facts marked *(changes)* there, plus anything legal or provider-specific, need confirmation from a current official source before they become hard rules.
 
 ## Use this skill when
 
