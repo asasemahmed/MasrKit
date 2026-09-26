@@ -12,7 +12,28 @@
 
 ## Identity
 
-- The national ID (الرقم القومي) is 14 digits. It encodes birth century and date, a governorate code, a sequence, and a check digit. Treat it as sensitive personal data: collect it only when a verified requirement exists, and never derive gender, age, or origin from it for UI purposes.
+- The national ID (الرقم القومي) is 14 digits. The number is assigned at birth and appears on the birth certificate; the card itself is issued at 16. It encodes birth century and date, a governorate code, a sequence, and a check digit. Treat it as sensitive personal data: collect it only when a verified requirement exists.
+
+### National ID Structure
+
+```text
+[ C ][ YY MM DD ][ GG ][ SSS G ][ K ]
+  1       2-7      8-9    10-13    14
+```
+
+| Digits | Meaning | Validation |
+|---|---|---|
+| **Digit 1 (`C`)** | **Century of birth** | `2` = 1900–1999.<br/>`3` = 2000–2099. |
+| **Digits 2–7 (`YYMMDD`)** | **Date of Birth** | `YY`: year in century (e.g. `95` + century `2` = `1995`).<br/>`MM`: month (`01` to `12`).<br/>`DD`: day (`01` to `31`). Reject future dates and implausible ages. |
+| **Digits 8–9 (`GG`)** | **Governorate of Birth Code** | Known codes:<br/>`01` Cairo, `02` Alexandria, `03` Port Said, `04` Suez.<br/>`11` Damietta, `12` Dakahlia, `13` Sharqia, `14` Qalyubia, `15` Kafr El-Sheikh, `16` Gharbia, `17` Menofia, `18` Beheira, `19` Ismailia.<br/>`21` Giza, `22` Beni Suef, `23` Fayoum, `24` Minya, `25` Asyut, `26` Sohag, `27` Qena, `28` Aswan, `29` Luxor.<br/>`31` Red Sea, `32` New Valley, `33` Matrouh, `34` North Sinai, `35` South Sinai.<br/>`88` Citizens born abroad. |
+| **Digits 10–13 (`SSSG`)** | **Sequence & Gender** | Sequential registration number. **Digit 13 represents gender**: Odd (`1, 3, 5, 7, 9`) = Male, Even (`0, 2, 4, 6, 8`) = Female. |
+| **Digit 14 (`K`)** | **Checksum Digit** | Ministry of Interior verification check digit. |
+
+### Product UX Best Practices
+
+1. **Auto-derive Carefully:** Pre-filling Date of Birth is fine if the product genuinely needs it and the user can see and edit it. However, never infer gender from a name, photo, or ID, and don't derive gender, age, or origin from the ID for UI purposes. Gender should stay a separate, optional question. Showing a gender the user never chose to give is a privacy and trust problem.
+2. **Input Ergonomics:** Enforce `inputmode="numeric"`, `maxlength="14"`, and `dir="ltr"`.
+3. **Privacy & Security:** Treat National ID as sensitive PII. Never expose unmasked National IDs in URLs, query strings, or error alerts. Display a fully masked representation in user profiles that hides the DOB and century (e.g., `**********0123`).
 
 ## Addresses and Logistics
 
