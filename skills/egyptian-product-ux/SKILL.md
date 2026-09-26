@@ -22,7 +22,16 @@ Start from the dated defaults in [references/egypt-facts.md](references/egypt-fa
 
 ## Use this skill when
 
-Use it to design or review acquisition, onboarding, registration, checkout, booking, marketplace, education, SaaS, support, and identity/document flows for Egypt. Pair it with `arabic-ui`, `arabic-rtl`, `egyptian-copy`, or `egyptian-backend` as the task requires.
+Use it to design or review acquisition, onboarding, registration, checkout, booking, marketplace, education, SaaS, support, and identity/document flows for Egypt.
+
+This skill owns the user-facing flow. Neighboring skills own the rest, so load them when the task reaches their layer:
+
+| Topic | This skill decides | Owned elsewhere |
+|---|---|---|
+| Phone and OTP | Flow, correction, resend UX | Storage, limits, enumeration: `egyptian-backend` |
+| Payments | Which methods to show, pending and recovery screens | State machine, reconciliation: `egyptian-backend`; wording: `egyptian-copy` |
+| Uploads and documents | What to ask for, guidance, retry | Validation, storage, access: `egyptian-backend` |
+| Mixed Arabic/Latin values | Where they appear | Isolation and direction: `arabic-rtl` |
 
 ## Workflow
 
@@ -58,22 +67,23 @@ Phone-first may be appropriate when the product's authentication, delivery, or s
 - Accept common human-entered separators and normalize at the backend boundary.
 - Show a clear country calling code when international form is expected; do not silently prepend/strip without feedback.
 - Keep the field visually LTR and the label/instructions RTL.
-- Do not reject valid numbers based solely on a brittle prefix list. Numbering plans can change; verify current official or trusted library data.
+- Accept every input format listed in [references/egypt-facts.md](references/egypt-facts.md), including Arabic-Indic digits. Never validate or label by operator prefix.
 - Offer correction before sending OTP. Mask the destination in confirmation screens without hiding which number was used.
 
 ## OTP UX
 
 - Explain where the code was sent and how long the current code remains usable only if the backend enforces that rule.
 - Support paste and platform autofill where available. A single logical input is often more accessible than six unrelated boxes.
-- Rate-limit resend and verification on the server. Show when resend becomes available without trapping the user.
+- Show when resend becomes available without trapping the user.
 - Handle delayed messages, expired/replaced codes, too many attempts, number correction, and alternate verified channels.
-- Never expose whether an account exists when that creates an enumeration risk.
+- Keep screens neutral about whether an account exists; the backend enforces this.
 
 ## Egyptian addresses
 
 Ask only for the precision the fulfillment or service needs. Egyptian addresses may require a flexible combination of governorate, city/area/district, street, building, floor, apartment, landmark, recipient, and phone. Do not force every address into a foreign state/ZIP template.
 
-- Use structured fields for routing/filtering and a flexible address/detail field for local delivery nuance.
+- A practical delivery form: governorate (select), city or district (select with a free-text fallback), street, building number, floor, apartment, landmark (`علامة مميزة`), and a recipient phone the courier can call.
+- Use structured fields for routing/filtering and a flexible address/detail field for local delivery nuance. Do not require a postal code.
 - Make field labels concrete and mark required versus optional.
 - Provide searchable choices only when the maintained dataset is authoritative and current; otherwise allow safe fallback entry.
 - Keep address book entries editable and show a human-readable summary before confirmation.
@@ -86,7 +96,8 @@ Read [references/local-data.md](references/local-data.md) for phone, address, cu
 - Represent currency explicitly as EGP in product requirements and backend data. Display may use `ج.م`, `EGP`, or a verified localized formatter according to audience and context.
 - Show total, fees, discounts, delivery, and tax treatment clearly. Do not reveal a new mandatory charge at the final action.
 - Display a payment method only when it is supported for this order, user, amount, and environment.
-- Do not assume cash, cards, wallets, installments, or a particular local provider is expected or available. Validate product data and current provider documentation.
+- Egyptian users expect some mix of cash on delivery, cards (including Meeza), mobile wallets, InstaPay, reference-code payments such as Fawry, and installments. Show only the ones this account actually has enabled.
+- For reference-code payments and cash on delivery, the order is pending by design: show the code or instructions, the expiry, and how the user will know it went through.
 - Distinguish initiated, awaiting user action, pending provider confirmation, paid, failed, refunded, and partially refunded.
 - On uncertain outcomes, prevent blind repeat payment, show how status will update, and provide a reference/support path.
 
@@ -106,7 +117,7 @@ Use WhatsApp as an optional channel when research and operations support it: sal
 - Pre-fill only necessary, non-sensitive context and let the user edit it.
 - Provide a fallback when WhatsApp is unavailable or inappropriate.
 - Do not imply end-to-end product completion if the user is merely leaving the app to message a business.
-- Verify current official integration rules and provider capabilities; never invent template, delivery, or automation features.
+- Do not promise WhatsApp automation (templates, bots, delivery receipts) that the business has not actually set up.
 
 ## Domain patterns
 
@@ -133,9 +144,8 @@ Handle role/permission clarity, organization setup, bilingual data, imports, inv
 ## Documents and identity-related forms
 
 - Request only necessary documents and explain purpose, accepted types, size, image quality, retention, and who can access them.
-- Validate type using content and metadata, not extension alone. Strip unsafe metadata where appropriate and store privately.
 - Provide camera guidance and preview/replace controls. Support low-bandwidth retry.
-- Treat identity and regulatory requirements as high-risk facts. Verify current official requirements and obtain appropriate legal/security review; never infer them from another Egyptian service.
+- Ask for the national ID or identity documents only when a confirmed requirement exists. A requirement seen in another Egyptian service is not evidence for yours.
 
 ## Accessibility and recovery
 

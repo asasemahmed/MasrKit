@@ -98,7 +98,7 @@ Read [references/typography.md](references/typography.md) when selecting fonts o
 ## Mixed language and numbers
 
 - Keep product names, model numbers, codes, email addresses, and URLs intact when translation harms recognition.
-- Isolate mixed-direction tokens with semantic markup such as `bdi` or a deliberate direction wrapper. Do not insert invisible Unicode controls into stored copy as a default workaround.
+- Mark every mixed-direction token (phone, email, code, amount) in designs and specs so it gets isolated in implementation. The isolation mechanics belong to `arabic-rtl`.
 - Choose Arabic-Indic or Western digits from product convention and user research; stay consistent within a task. Never reorder the digits themselves.
 - Localize date and currency display with locale-aware formatters, then verify the exact product requirement. Avoid hand-concatenating symbols and values.
 

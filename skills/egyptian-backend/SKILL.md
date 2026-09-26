@@ -56,7 +56,7 @@ Never destroy the original value. Version normalization logic so indexes can be 
 - Accept human input at the API boundary, validate with maintained numbering metadata, and store a normalized international representation when valid.
 - Retain a safe display/original value when it supports user confirmation or customer service; do not use it as the unique identity key without normalization.
 - Keep verification state and timestamps separate from the phone value. A changed number is not verified because the previous number was.
-- Do not hardcode a permanent list of Egyptian mobile prefixes. Plans and portability can change.
+- Normalize Arabic-Indic digits and every common Egyptian input format to E.164. Do not validate by operator prefix; number portability breaks that mapping.
 - Mask numbers in responses and logs according to context. Protect account lookup endpoints from enumeration.
 
 ## Money and EGP
@@ -74,7 +74,7 @@ An exact decimal representation is also valid when scale rules are explicit. Def
 
 - Make totals reproducible from immutable/recorded inputs where the domain requires it.
 - Do not infer paid state from redirect success; reconcile with a verified provider result.
-- Model initiated, action-required, pending, succeeded, failed, cancelled, refunded, and disputed states only as supported by the actual integration.
+- Model initiated, action-required, pending, succeeded, failed, cancelled, refunded, and disputed states only as supported by the actual integration. Confirmation timing differs sharply by Egyptian payment method (reference codes and cash on delivery stay pending for hours or days); see the table in [references/egypt-data.md](references/egypt-data.md).
 
 ## Time and dates
 
@@ -121,20 +121,17 @@ Read [references/provider-adapters.md](references/provider-adapters.md) before i
 
 ## Uploads and documents
 
-- Allowlist required file types and sizes; inspect content signatures rather than trusting extension or client MIME type.
-- Generate server-side object names, store outside executable/public roots, and use private access with short-lived authorized retrieval.
-- Scan or quarantine according to the threat model, strip risky metadata when appropriate, and prevent active-content execution.
-- Track owner, purpose, status, checksum, size, content type, created time, retention/deletion state, and access events as required.
-- Enforce authorization on every download/preview. A hard-to-guess URL is not access control.
-- Define partial upload, retry, orphan cleanup, and deletion behavior.
+Egyptian products often collect national ID scans, certificates, and utility bills over slow mobile connections. Apply standard upload security (content-signature allowlists, server-generated names, private storage, authorization on every download) and add:
+
+- resumable or chunked uploads with per-file retry, since users should not restart a form after a dropped connection;
+- server-side image downscaling so phone photos of documents stay small;
+- encryption, restricted access, and masking for identity documents and national ID numbers;
+- explicit retention and deletion for every document purpose.
 
 ## Privacy, security, and audit logs
 
-- Minimize collected personal data and define purpose, access, retention, correction, and deletion behavior with qualified stakeholders.
-- Encrypt in transit and use platform-appropriate protection at rest. Keep secrets in managed configuration, never the repository.
-- Audit sensitive state changes with actor, action, target, time, outcome, and correlation ID. Avoid full documents, OTPs, credentials, and unnecessary personal data.
-- Protect APIs with authorization at object boundaries, input limits, output filtering, rate limits, secure error handling, and dependency updates.
-- Legal and regulatory obligations change. Verify with the current official authority and appropriate counsel; never derive requirements from this skill.
+- Apply standard API security: object-level authorization, input limits, rate limits, secrets in managed configuration, and audit logs without OTPs, credentials, or full documents.
+- Egypt's Personal Data Protection Law (Law No. 151 of 2020) applies to personal data of people in Egypt. Define purpose, retention, and deletion for phone numbers, addresses, national IDs, and documents, and confirm current obligations with counsel; see [references/egypt-data.md](references/egypt-data.md).
 
 ## Provider adapters
 
