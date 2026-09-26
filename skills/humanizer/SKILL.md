@@ -1,6 +1,6 @@
 ---
 name: humanizer
-description: Rewrite stiff, mechanical, or over-formatted text into natural human prose while preserving meaning, voice, facts, and required structure.
+description: Rewrite stiff, robotic, or AI-sounding text into natural prose in English or Arabic, including Egyptian Arabic. Use when asked to humanize, de-AI, polish, or make text sound natural, to remove em dashes, en dashes, emoji, or decorative symbols, or to clean up over-formatted copy, while keeping facts, meaning, voice, code, and identifiers unchanged. Does not promise to evade AI detectors.
 metadata:
   version: 1.0.0
   category: content-quality

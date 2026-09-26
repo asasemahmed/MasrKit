@@ -1,6 +1,6 @@
 ---
 name: egyptian-session-report
-description: Summarize what an agent changed in a working session and deliver it as a clean RTL HTML report written in natural Egyptian Arabic, using Cairo font with a light and dark theme toggle.
+description: Summarize what an agent did in a working session as a self-contained RTL HTML report written in natural Egyptian Arabic, with the Cairo font and a light and dark toggle. Use when the user asks for a session summary, a report of changes, or something to share with Arabic-speaking teammates, clients, or managers (for example تقرير بالشغل or لخّص اللي اتعمل). Not for commit messages, changelogs, or English release notes.
 metadata:
   version: 1.0.0
   category: egypt-localization

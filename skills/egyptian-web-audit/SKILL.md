@@ -1,6 +1,6 @@
 ---
 name: egyptian-web-audit
-description: Audit websites and products for credible Egyptian localization across UI, RTL, copy, product flows, accessibility, performance, and trust.
+description: Audit a website or app for Egyptian and Arabic localization quality. Use when asked to review, audit, or QA an Arabic or Egyptian site for RTL bugs, broken bidi text, stiff or machine-translated Arabic copy, checkout, phone, address, and payment flows, mobile performance, accessibility, or trust signals, and to produce severity-ranked findings with evidence and fixes instead of a score.
 metadata:
   version: 1.0.0
   category: egypt-localization

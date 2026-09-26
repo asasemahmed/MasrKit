@@ -1,6 +1,6 @@
 ---
 name: egyptian-backend
-description: Design secure internationalization-aware backends for Egyptian products, including local data, money, time, messaging, OTP, uploads, and provider adapters.
+description: Design backends for Egyptian-facing products. Use when modeling EGP money, +20 phone numbers, Africa/Cairo time and daylight saving, Arabic text storage and search normalization, locale negotiation, SMS, WhatsApp, and email notifications, OTP login, document uploads, or adapters for Egyptian payment, wallet, and messaging providers in FastAPI, Node.js, or Next.js. Not for UI flows (use egyptian-product-ux).
 metadata:
   version: 1.0.0
   category: egypt-localization
