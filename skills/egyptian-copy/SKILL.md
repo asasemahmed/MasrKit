@@ -138,7 +138,7 @@ These examples show adaptation, not universal approved strings.
 
 ## Terminology and consistency
 
-Maintain a small termbase with: concept ID, preferred Arabic, allowed English, rejected variants, register, definition, and example. Read [references/terminology.md](references/terminology.md) for a starter reference.
+Maintain a small termbase with: concept ID, preferred Arabic, allowed English, rejected variants, register, definition, and example. Read [references/terminology.md](references/terminology.md) for a categorized UI microcopy reference covering core actions, auth, commerce, fintech, and system states.
 
 - One concept should have one preferred name within a flow.
 - Distinguish `حساب` (account), `طلب` (request/order/application depending on domain), and `عملية` (transaction/operation) by context.

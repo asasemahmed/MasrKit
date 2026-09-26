@@ -89,7 +89,7 @@ Ask only for the precision the fulfillment or service needs. Egyptian addresses 
 - Keep address book entries editable and show a human-readable summary before confirmation.
 - Do not infer administrative legality or serviceability from a typed locality; validate against actual operational coverage.
 
-Read [references/local-data.md](references/local-data.md) for phone, address, currency, date, and timezone boundaries.
+Read [references/egypt-facts.md](references/egypt-facts.md) for canonical governorates, shipping tiers, and National ID structure. Read [references/local-data.md](references/local-data.md) for phone normalization, currency, date, and timezone boundaries.
 
 ## Currency and payment UX
 
@@ -145,7 +145,8 @@ Handle role/permission clarity, organization setup, bilingual data, imports, inv
 
 - Request only necessary documents and explain purpose, accepted types, size, image quality, retention, and who can access them.
 - Provide camera guidance and preview/replace controls. Support low-bandwidth retry.
-- Ask for the national ID or identity documents only when a confirmed requirement exists. A requirement seen in another Egyptian service is not evidence for yours.
+- Treat identity and regulatory requirements as high-risk facts. Verify current official requirements and obtain appropriate legal/security review; never infer them from another Egyptian service.
+- For the Egyptian National ID (الرقم القومي), pre-filling Date of Birth is fine if the product genuinely needs it and the user can see and edit it. Never derive gender, age, or origin from the ID for UI purposes. Gender should stay a separate, optional question. See [references/egypt-facts.md](references/egypt-facts.md#identity) for structure and rules.
 
 ## Accessibility and recovery
 
