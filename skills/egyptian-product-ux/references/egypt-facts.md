@@ -14,12 +14,57 @@
 
 - The national ID (الرقم القومي) is 14 digits. It encodes birth century and date, a governorate code, a sequence, and a check digit. Treat it as sensitive personal data: collect it only when a verified requirement exists, and never derive gender, age, or origin from it for UI purposes.
 
-## Addresses
+## Addresses and Logistics
 
 - There are 27 governorates (محافظات). Below them, cities, districts (أحياء/مراكز), and villages vary in naming and spelling.
 - Delivery addresses commonly rely on building number, floor, apartment, and a landmark (علامة مميزة). Street names can be informal, duplicated, or missing.
 - Postal codes exist (5 digits) but consumers rarely know or use them. Do not make them required.
 - Couriers often confirm the address by phone call before delivery, which is why a reachable phone number is usually part of the address.
+
+### Canonical Egyptian Governorates
+
+Software interfaces should maintain standardized Arabic and English labels alongside ISO 3166-2:EG codes.
+
+| Governorate (Arabic) | Governorate (English) | ISO Code | Standard Courier Shipping Tier |
+|---|---|---|---|
+| القاهرة | Cairo | `EG-C` | Greater Cairo (القاهرة الكبرى) |
+| الجيزة | Giza | `EG-GZ` | Greater Cairo (القاهرة الكبرى) |
+| القليوبية | Qalyubia | `EG-KB` | Greater Cairo (القاهرة الكبرى) |
+| الإسكندرية | Alexandria | `EG-ALX` | Alexandria (الإسكندرية) |
+| البحيرة | Beheira | `EG-BH` | Lower Egypt / Delta (الوجه البحري) |
+| الغربية | Gharbia | `EG-GH` | Lower Egypt / Delta (الوجه البحري) |
+| كفر الشيخ | Kafr El-Sheikh | `EG-KFS` | Lower Egypt / Delta (الوجه البحري) |
+| المنوفية | Menofia | `EG-MNF` | Lower Egypt / Delta (الوجه البحري) |
+| الدقهلية | Dakahlia | `EG-DK` | Lower Egypt / Delta (الوجه البحري) |
+| الشرقية | Sharqia | `EG-SHR` | Lower Egypt / Delta (الوجه البحري) |
+| دمياط | Damietta | `EG-DT` | Lower Egypt / Delta (الوجه البحري) |
+| بورسعيد | Port Said | `EG-PTS` | Canal Cities (مدن القناة) |
+| الإسماعيلية | Ismailia | `EG-IS` | Canal Cities (مدن القناة) |
+| السويس | Suez | `EG-SUZ` | Canal Cities (مدن القناة) |
+| بني سويف | Beni Suef | `EG-BNS` | Northern Upper Egypt (شمال الصعيد) |
+| الفيوم | Fayoum | `EG-FYM` | Northern Upper Egypt (شمال الصعيد) |
+| المنيا | Minya | `EG-MN` | Middle Upper Egypt (وسط الصعيد) |
+| أسيوط | Asyut | `EG-AST` | Middle Upper Egypt (وسط الصعيد) |
+| سوهاج | Sohag | `EG-SHG` | Southern Upper Egypt (جنوب الصعيد) |
+| قنا | Qena | `EG-KN` | Southern Upper Egypt (جنوب الصعيد) |
+| الأقصر | Luxor | `EG-LX` | Southern Upper Egypt (جنوب الصعيد) |
+| أسوان | Aswan | `EG-ASN` | Southern Upper Egypt (جنوب الصعيد) |
+| البحر الأحمر | Red Sea | `EG-BA` | Coastal & Frontier (المحافظات الحدودية) |
+| الوادي الجديد | New Valley | `EG-WAD` | Frontier & Remote (المحافظات الحدودية) |
+| مطروح | Matrouh | `EG-MT` | Coastal & Frontier (المحافظات الحدودية) |
+| شمال سيناء | North Sinai | `EG-SIN` | Frontier & Remote (المحافظات الحدودية) |
+| جنوب سيناء | South Sinai | `EG-JS` | Coastal & Frontier (المحافظات الحدودية) |
+
+### Courier Logistics & Delivery Zones *(changes)*
+
+Most Egyptian third-party logistics couriers (Bosta, Mylerz, Aramex Egypt, Egypt Post) group governorates into delivery tiers for turnaround and pricing. **Delivery times, fees, and COD limits differ by courier and change over time. The following is an example of common tiers:**
+
+1. **Greater Cairo (القاهرة الكبرى):** Cairo, Giza, Qalyubia. Highest order density, same-day or next-day turnaround (24h), lowest delivery fees.
+2. **Alexandria (الإسكندرية):** Alexandria. Standard 24–48h window.
+3. **Lower Egypt / Delta (الوجه البحري):** Dakahlia, Gharbia, Sharqia, Menofia, Beheira, Kafr El-Sheikh, Damietta. Standard 24–48h window.
+4. **Canal Zone (مدن القناة):** Port Said, Ismailia, Suez. 24–48h window.
+5. **Upper Egypt (محافظات الصعيد):** From Beni Suef down to Aswan. 48–72h turnaround, incremental rate tiers.
+6. **Frontier & Coastal (المحافظات الحدودية):** Red Sea, Matrouh, South Sinai, North Sinai, New Valley. 3–5 days, higher shipping fees, occasional Cash-on-Delivery restrictions based on courier branch coverage.
 
 ## Money
 
